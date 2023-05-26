@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+        <!-- 功能一，加粗文本 -->
+		<dict>
+			<key>Image File</key>
+			<string>bold.png</string>
+			<key>Title</key>
+			<string>Bold</string>
+            <key>interpreter</key>
+			<string>/bin/bash</string>
+			<key>shell script</key>
+            <string>echo -n "**$POPCLIP_TEXT**"</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-bold=1</string>
+			</array>
+            <key>after</key>
+			<string>paste-result</string>
+		</dict>
+        <!-- 功能二，高亮文本 -->
+		<dict>
+			<key>Image File</key>
+			<string>highlight.png</string>
+			<key>Title</key>
+			<string>Highlight</string>
+            <key>interpreter</key>
+			<string>/bin/bash</string>
+			<key>shell script</key>
+            <string>echo -n "==${POPCLIP_TEXT}=="</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-highlight=1</string>
+			</array>
+            <key>after</key>
+			<string>paste-result</string>
+		</dict>
+		 <!-- 功能三，斜体文本 -->
+		<dict>
+			<key>Image File</key>
+			<string>italic.png</string>
+			<key>Title</key>
+			<string>Italic</string>
+            <key>interpreter</key>
+			<string>/bin/bash</string>
+			<key>shell script</key>
+            <string>echo -n "*${POPCLIP_TEXT}*"</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-italic=1</string>
+			</array>
+            <key>after</key>
+			<string>paste-result</string>
+		</dict>
+		 <!-- 功能四，删除文本 -->
+		<dict>
+			<key>Image File</key>
+			<string>strikethrough.png</string>
+			<key>Title</key>
+			<string>Strikethrough</string>
+            <key>interpreter</key>
+			<string>/bin/bash</string>
+			<key>shell script</key>
+            <string>echo -n "~~${POPCLIP_TEXT}~~"</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-strikethrough=1</string>
+			</array>
+            <key>after</key>
+			<string>paste-result</string>
+		</dict>
+		 <!-- 功能五，引用文本 -->
+		<dict>
+			<key>Image File</key>
+			<string>quote.png</string>
+			<key>Title</key>
+			<string>Quote</string>
+            <key>interpreter</key>
+			<string>/bin/bash</string>
+			<key>shell script</key>
+            <string>echo "${POPCLIP_TEXT}" | awk '{print "> "$0}'</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-quote=1</string>
+			</array>
+            <key>after</key>
+			<string>paste-result</string>
+		</dict>
+		 <!-- 功能六，注释文本 -->
+		<dict>
+			<key>Image File</key>
+			<string>comment.png</string>
+			<key>Title</key>
+			<string>Comment</string>
+            <key>interpreter</key>
+			<string>/bin/bash</string>
+			<key>shell script</key>
+            <string>echo -n "\`${POPCLIP_TEXT}\`"</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-comment=1</string>
+			</array>
+            <key>after</key>
+			<string>paste-result</string>
+		</dict>
+        <!-- 更多功能... -->
+	</array>
+    <key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>bold</string>
+			<key>Option Label</key>
+			<string>Enable Bold</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>highlight</string>
+			<key>Option Label</key>
+			<string>Enable Highlight</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>italic</string>
+			<key>Option Label</key>
+			<string>Enable Italic</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>strikethrough</string>
+			<key>Option Label</key>
+			<string>Enable Strikethrough</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>quote</string>
+			<key>Option Label</key>
+			<string>Enable Quote</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>comment</string>
+			<key>Option Label</key>
+			<string>Enable Comment</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+        <!-- 更多选项... -->
+	</array>
+	<key>Required Apps</key>
+	<array>
+		<string>com.agiletortoise.Drafts-OSX</string>
+		<string>md.obsidian</string>
+		<string>com.coderforart.MWeb3</string>
+		<string>com.ulyssesapp.mac</string>
+		<string>pro.writer.mac</string>
+	</array>
+    <key>Extension Description</key>
+	<string>PopClip extension for Markdown editing.</string>
+	<key>Extension Identifier</key>
+	<string>com.example.popclip.extension.markdown</string>
+	<key>Extension Image File</key>
+	<string>markdown.png</string>
+	<key>Extension Name</key>
+	<string>Markdown Editing</string>
+	<key>Required Software Version</key>
+	<integer>1000</integer>
+</dict>
+</plist>
